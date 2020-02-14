@@ -11,7 +11,7 @@ private:
     void ensureCapacity();
 
 public:
-    Stack(/* args */);
+    Stack();
     Stack(const Stack &);
     ~Stack();
     bool empty() const;
@@ -22,7 +22,7 @@ public:
 };
 
 template <typename T>
-Stack<T>::Stack(/* args */) : size(0), capacity(16)
+Stack<T>::Stack() : size(0), capacity(16)
 {
     elements = new T[capacity];
 }
