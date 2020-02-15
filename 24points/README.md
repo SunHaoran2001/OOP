@@ -13,12 +13,12 @@ Jack (11) of Clubs
 Enter an expression: (13 - 9) * (1 + 5)←Enter   
 Congratulations! You got it!
 
->Ace (1) of Diamonds
-5 of Diamonds
-9 of Spades
+>Ace (1) of Diamonds     
+5 of Diamonds     
+9 of Spades     
 Queen (12) of Hearts
-Enter an expression: (13 - 9) * (1 + 5)←Enter
-Congratulations! You got it!    
+Enter an expression: (13 - 9) * (1 + 5)←Enter      
+Congratulations! You got it!       
 
 >6 of Clubs    
 5 of Clubs    
