@@ -24,7 +24,7 @@ Congratulations! You got it!
 5 of Clubs    
 Jack (11) of Clubs   
 5 of Spades   
-Enter an expression: 0←Enter   
+Enter an expression: 0←Enter    
 Sorry, one correct expression would be (5 * 6) - (11 - 5)   
 
 >6 of Clubs   
