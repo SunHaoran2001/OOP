@@ -14,18 +14,6 @@ int evaluateExpression(const string &expression);
 void processAnOperator(
     Stack<int> &operandStack, Stack<char> &operatorStack);
 
-int main()
-{
-    string expression;
-    cout << "Enter an expression:";
-    getline(cin, expression);
-
-    cout << expression << " = "
-         << evaluateExpression(expression) << endl;
-
-    return 0;
-}
-
 vector<string> split(const string &expression)
 {
     vector<string> v;    //A vector to store split items as strings
