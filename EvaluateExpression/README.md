@@ -134,6 +134,8 @@ void processAnOperator(
 }
 ```
 附上 ImprovedStack.h
+--------------------
+
 ```C++
 #ifndef IMPROVEDSTACK_H
 #define IMPROVEDSTACK_H
