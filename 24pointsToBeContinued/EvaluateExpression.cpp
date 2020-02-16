@@ -12,7 +12,7 @@ vector<string> split(const string &expression);
 int evaluateExpression(const string &expression);
 //Perform an operation
 void processAnOperator(
-    Stack<int> &operandStack, Stack<char> &operatorStack);
+    Stack<double> &operandStack, Stack<char> &operatorStack);
 
 vector<string> split(const string &expression)
 {
@@ -51,7 +51,7 @@ vector<string> split(const string &expression)
 int evaluateExpression(const string &expression)
 {
     //Create operandStack to store operands
-    Stack<int> operandStack;
+    Stack<double> operandStack;
 
     //Create operatorStack to store operators
     Stack<char> operatorStack;
@@ -100,7 +100,7 @@ int evaluateExpression(const string &expression)
         }
         else
         {
-            operandStack.push(atoi(tokens[i].c_str()));
+            operandStack.push(atoi(tokens[i].c_str()) * 1.0);
         }
     }
 
@@ -117,7 +117,7 @@ int evaluateExpression(const string &expression)
 //Process one operator: Take an operator from operatorStack and
 //apply it on the operands in the operandStack
 void processAnOperator(
-    Stack<int> &operandStack, Stack<char> &operatorStack)
+    Stack<double> &operandStack, Stack<char> &operatorStack)
 {
     char op = operatorStack.pop();
     int op1 = operandStack.pop();
@@ -128,6 +128,8 @@ void processAnOperator(
         operandStack.push(op2 - op1);
     else if (op == '*')
         operandStack.push(op2 * op1);
+    else if (op1 == 0)
+        return;
     else if (op == '/')
         operandStack.push(op2 / op1);
 }

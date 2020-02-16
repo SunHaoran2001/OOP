@@ -22,7 +22,7 @@ int main()
 
     cout << expression << " = "
          << evaluateExpression(expression) << endl;
-
+    system("pause");
     return 0;
 }
 

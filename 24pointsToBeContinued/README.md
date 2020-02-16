@@ -33,3 +33,50 @@ Queen (12) of Clubs
 5 of Spades    
 Enter an expression: 0←Enter     
 Yes, No 24 points   
+
+
+
+解决方案
+1）计算
+2）枚举所有排列方式
+1.枚举运算符
+```C++
+void operatrcombination()
+{
+    //declare a string variable
+    string s = "+-/*";
+    //declare and initialize an integer variable
+    int l, m, n, t;
+    l = 0;
+    m = 0;
+    n = 0;
+    t = 0;
+    //Use for loop to determine all operator combinations and simultaneously(同时地) store it in array
+    for (int i = 0; i < 64; i++)
+    {
+        //check value of i is divisible by 4
+        t = i % 4;
+        //use if statement to set and reset the second and
+        //last character in each string
+        if (t == 0 && i != 0)
+        {
+            m++;
+            n = 0;
+        }
+        //use if statement to reset the first character in
+        //each string
+        if (i % 16 == 0 && i != 0)
+        {
+            l++;
+            m = 0;
+        }
+        //concatenate the string to determine operator
+        //combination.
+        optr[i] = optr[i] + s[l];
+        optr[i] = optr[i] + s[m];
+        optr[i] = optr[i] + s[n];
+        //四个数字三个运算符
+        n++;
+    }
+}
+```

@@ -1,23 +1,27 @@
 /*Step 1:
 Program Plan: 
 • Declare a final[], optr[] and perm[][] array to store all possible combinations of operands and operators.
+
 • Define following function:
+
 • converttonum() Function to convert character into number.
 • determine()Function used to evaluate an expression.
-• checkPreced() Function used to check precedence of operation which is required in evaluating expression.7
+• checkPreced() Function used to check precedence（优先） of operation which is required in evaluating expression.7
 • checkOprtr()Function used to perform operation like addition, subtraction, multiplication and division on operands.
 • operatrcombination()Function used to determine all possible combination of operators.
 • operandcombination()Function used to determine all possible combination of operands.
 • swap()Function used to swap array element which is required in determining operand combination.
 • change() Function used to convert integer number into string.
 • transformtostring()Function used to determine all possible combination of operator and operands with and without parenthesis.
-• Findsolution()Function used to determine all possible combination by calling different functions and then use for loop to get one by one all expression from string and then evaluate to display correct expression if it is possible.
+• Findsolution()Function used to determine all possible combination by calling different functions and then use for loop to get 
+one by one all expression from string and then evaluate to display correct expression if it is possible.
 • check()Function to check same card number has same suit
 • suit()Function used to return suit according to pass value
+
 • main() function to execute the program:
 • In main function at first declare and initialize string and integer type variables.
 • Declare two arrays to store card number and suit.
-• Use for loop to generate 4 random cards.
+• Use for loop to generate (产生，生成) 4 random cards.
 • Again use for loop to generate suit of 4 random cards. Use while loop inside for loop which till card does not have unique suit if two card are same.
 • Use if-else statement to display card details appropriately on screen.
 • After that read expression from user.
@@ -140,7 +144,7 @@ double determine(string exp)
                 numbers.pop();
                 double val2 = numbers.top();
                 numbers.pop();
-                double ret = checkOprtr(op, val1, val2);
+                double ret = checkOprtr(op, val1, val2); //Evaluatoin
                 numbers.push(ret);
             }
             // push new character into stack
@@ -159,8 +163,7 @@ double determine(string exp)
         numbers.pop();
         double val2 = numbers.top();
         numbers.pop();
-        double ret = checkOprtr(op, val1,
-                                val2);
+        double ret = checkOprtr(op, val1, val2);
         numbers.push(ret);
     }
     //top of stack contain the resultant value
@@ -175,8 +178,7 @@ bool checkPreced(char tr1, char tr2)
     //Use if else statement to return true and false according to precedence
     if (tr2 == '(' || tr2 == ')')
         return false;
-    if ((tr1 == '*' || tr1 == '/') && (tr2 == '+' || tr2 ==
-                                                         '-'))
+    if ((tr1 == '*' || tr1 == '/') && (tr2 == '+' || tr2 == '-'))
         return false;
     else
         return true;
@@ -213,7 +215,7 @@ void operatrcombination()
     m = 0;
     n = 0;
     t = 0;
-    //Use for loop to determine all operator combinations and simultaneously store it in array
+    //Use for loop to determine all operator combinations and simultaneously(同时地) store it in array
     for (int i = 0; i < 64; i++)
     {
         //check value of i is divisible by 4
@@ -245,7 +247,7 @@ void operatrcombination()
 //Step 8 :
 // Function to take operands from user and determine
 //operand combinations
-void operandcombination(int card[4])
+void operandcombination(int card[4]) //permutations 排列或者组合(方式)
 {
     int x, y, n = 4, count = 0, permutations = 1, p = 0, q = 0;
     vector<int> a;
@@ -495,8 +497,7 @@ bool check(int tempcar[4], int c, int d, int cardsuit[4])
 
 //Step 12 :
 //function to return suit according to passed value
-string
-suit(int t3)
+string suit(int t3)
 {
     //Use switch statement to return suit according to value of t3.
     switch (t3)
@@ -588,6 +589,8 @@ int main()
     else //display lose message
         cout << "Sorry! You lose! " << endl;
     findsolution(card);
+    cout << endl;
+
     system("pause");
     return 0;
 }
